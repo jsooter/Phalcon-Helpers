@@ -12,6 +12,7 @@ class Cli
     /*
     statusbar($i,$count)
     ====
+    Updates the status bar in the terminal
     */
     public static function statusbar($i,$count){
         echo chr(27) . '[2J';
@@ -20,6 +21,7 @@ class Cli
     /*
     show_status($done,$total,$size=30)
     ====
+    Draws a status bar in the terminal
     */
     public static function show_status($done,$total,$size=30) {
         static $start_time;

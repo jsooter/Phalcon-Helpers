@@ -18,6 +18,11 @@ class Language
     /*
     errorModelCreateFailed($model)
     ====
+    Model create method failed
+
+    Parameters
+    ----
+    $model : object
     */
     public static function errorModelCreateFailed($model){
         return 'Failed to create from '.self::getClassName($model);
@@ -25,22 +30,37 @@ class Language
     /*
     errorModelUpdateFailed($model)
     ====
+    Model update method failed
+
+    Parameters
+    ----
+    $model : object
     */
     public static function errorModelUpdateFailed($model){
-        return 'Failed to update from model.';
+        return 'Failed to update from '.self::getClassName($model);
     }
     /*
     errorModelDeleteFailed($model)
     ====
+    Model delete method failed
+
+    Parameters
+    ----
+    $model : object
     */
     public static function errorModelDeleteFailed($model){
-        return 'Failed to delete from model.';
+        return 'Failed to delete from '.self::getClassName($model);
     }
     /*
     getClassName($class)
     ====
+    Gets an object's class name
+
+    Parameters
+    ----
+    $class : object
     */
     public static function getClassName($class){
-        $class_name = get_class($class) ? get_class($class) : 'Unknown';
+        return get_class($class) ? get_class($class) : 'Unknown';
     }
 }
